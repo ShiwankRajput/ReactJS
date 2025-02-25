@@ -1,0 +1,26 @@
+
+.heading{
+    font-weight: 600px;
+    font-size: 40px;
+    margin: 30px;
+}
+
+input{
+    width: 100%;
+}
+
+.col-4{
+    text-align: left;
+}
+
+.col-2{
+    text-align: left;
+}
+
+.con{
+    margin: 10px;
+}
+
+.mybutton{
+    min-width: 70px;
+}
