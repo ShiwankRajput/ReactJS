@@ -1,3 +1,7 @@
+import css from './Items.module.css';   //this css you named can be anything you want to keep,this is note specific
+
+
+
 /*
 
 normal using...
@@ -7,7 +11,7 @@ normal using...
 function Items(props){
 
     return (
-        <li className="list-group-item">{props.healthy}</li>   
+        <li className={`${css["kgItem"]} list-group-item`}>{props.healthy}</li>   
     );
 }
 

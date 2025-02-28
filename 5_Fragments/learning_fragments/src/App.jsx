@@ -1,5 +1,6 @@
 import React from "react";
 import FoodItems from "./Components/FoodItems";
+import "./App.css";
 
 function App(){
 
