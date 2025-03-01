@@ -1,0 +1,16 @@
+
+.buttonContainer{
+    border-radius: 7px;
+    border: 2px solid black;
+    margin: 0px 43px 20px 43px;
+    width: 225px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.calButton{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}

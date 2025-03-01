@@ -1,13 +1,14 @@
+
 function AddTodo(){
 
     return (
     <div className="container text-center con">
         <div className="row myrow">
             <div className="col-4">
-                <input type="text" placeholder="Enter todo here" />
+                <input type="text" placeholder="Enter todo here" className="inputName"/>
             </div>
             <div className="col-4">
-                <input type="date" />
+                <input type="date" className="inputName" />
             </div>
             <div className="col-2">
                 <button type="button" className="btn btn-success mybutton">Add</button>

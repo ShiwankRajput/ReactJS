@@ -1,7 +1,4 @@
-function TodoItem2(){
-
-    let todoName = 'Go to college'
-    let todoDate = '14/03/2023'
+function TodoItem({todoName,todoDate}){
 
     return(
         <div className="container text-center con">
@@ -24,4 +21,4 @@ function TodoItem2(){
     ); 
 }
 
-export default TodoItem2
+export default TodoItem;
