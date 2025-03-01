@@ -17,7 +17,10 @@ function FoodItems({foodmart}){
 
         <ul className="list-group">
             {foodmart.map((item) => {
-                return <Items key={item}  healthy={item}></Items>  //giving key means, if we want to change any property of a particular item then using key we can change it. This is know as -----> ( key prop )
+                return <Items key={item}  healthy={item} buyEventHandler={(event)=> {
+                    console.log(event);
+                    console.log(`${item} beign bought`)
+                }}></Items>  //giving key means, if we want to change any property of a particular item then using key we can change it. This is know as -----> ( key prop )
             })}
         </ul>
     );

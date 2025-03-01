@@ -8,10 +8,16 @@ normal using...
 
 */
 
-function Items(props){
+function Items({healthy,buyEventHandler}){
 
     return (
-        <li className={`${css["kgItem"]} list-group-item`}>{props.healthy}</li>   
+
+        //using of handling events in react
+
+        <li className={`${css["kgItem"]} list-group-item`}>
+            {healthy}
+            <button className={`${css.button} btn btn-secondary`} onClick={buyEventHandler}>Buy</button>    
+        </li>   
     );
 }
 
