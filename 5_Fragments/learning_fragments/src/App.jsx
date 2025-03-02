@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FoodItems from "./Components/FoodItems";
 import "./App.css";
 import Container from "./Components/Container";
@@ -6,14 +6,32 @@ import FoodInput from "./Components/FoodInput";
 
 function App(){
 
-  let foodItems = ['roti','dal','salad','green vegetables','eggs','ghee'];
+  let [foodItems, setFoodItem] = useState(['dal','salad','green vegetables']);
 
-  let textToShow = "Food item entered by user."
+  /*
 
-  let handleOnChange = (event) => {
-    console.log(event);
-    console.log(event.target.value);
-    textToShow = event.target.value;
+  let textToShow = "Food item entered by user."  //this is not going to change as it App component is called one which does not maintain state, thus we use useState hook to maintain its state.
+
+  useState hook :- return array val and a method to change it
+
+  */
+
+  let textStateArr = useState("Food item entered by user.")
+  let textToShow = textStateArr[0];
+  let setTextState = textStateArr[1];
+
+
+
+  let onKeyChange = (event) => {
+    if(event.key == 'Enter'){
+      let newFoodItem = event.target.value;
+      let newItems = [...foodItems,newFoodItem];
+      event.target.value = "";
+      setFoodItem(newItems);   //this method basically calls the App function or component again to re-paint it. 
+      console.log('Enter item is : ' + newFoodItem);
+    }
+
+    // setTextState(event.target.value);   {for text to show after input box}
   }
 
   return (
@@ -28,7 +46,7 @@ function App(){
 
         <h1>Healthy food (using map and props children)</h1>
 
-        <FoodInput handleOnChange={handleOnChange}></FoodInput>
+        <FoodInput handleOnKeyChange={onKeyChange}></FoodInput>
         <p>{textToShow}</p>
 
         <FoodItems foodmart={foodItems}></FoodItems>

@@ -8,15 +8,15 @@ normal using...
 
 */
 
-function Items({healthy,buyEventHandler}){
+function Items({healthy,bought,handleBuyButton}){
 
     return (
 
         //using of handling events in react
 
-        <li className={`${css["kgItem"]} list-group-item`}>
+        <li className={`${css["kgItem"]} list-group-item ${bought ? 'active' : 'null'}`}>
             {healthy}
-            <button className={`${css.button} btn btn-secondary`} onClick={buyEventHandler}>Buy</button>    
+            <button className={`${css.button} btn btn-secondary`} onClick={handleBuyButton}>Buy</button>    
         </li>   
     );
 }
