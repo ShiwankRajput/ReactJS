@@ -1,6 +1,6 @@
 import css from './ButtonContainer.module.css';
 
-function ButtonContainer(){
+function ButtonContainer({buttonClicked}){
 
     let buttonName = ['C','1','2','+','3','4','-','5','6','*','7','8','/','=','9','0','.'];
 
@@ -8,7 +8,7 @@ function ButtonContainer(){
         <div className={css.buttonContainer}>
 
             {buttonName.map((bName) => {
-                return <button className={css.calButton}>{bName}</button>
+                return <button className={css.calButton} onClick={buttonClicked} >{bName}</button>
             })}
 
         </div>

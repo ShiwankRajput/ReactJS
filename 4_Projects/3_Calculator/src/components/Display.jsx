@@ -1,7 +1,7 @@
 import css from './Display.module.css';
 
-function Display(){
-    return <input className={css.display} type="text" />;
+function Display({displayValue}){
+    return <input className={css.display} type="text" value={displayValue} readOnly />;
 }
 
 export default Display;
