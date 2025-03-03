@@ -1,4 +1,4 @@
-function TodoItem({todoName,todoDate}){
+function TodoItem({todoName,todoDate,deleteThisItem}){
 
     return(
         <div className="container text-center con">
@@ -12,7 +12,7 @@ function TodoItem({todoName,todoDate}){
                     {todoDate}
                 </div>
                 <div className="col-2">
-                    <button type="button" className="btn btn-danger mybutton">Delete</button>
+                    <button type="button" className="btn btn-danger mybutton" onClick={()=>deleteThisItem(todoName,todoDate)}>Delete</button> 
                 </div>
 
             </div>
