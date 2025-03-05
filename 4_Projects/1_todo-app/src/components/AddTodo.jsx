@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { RiAddLargeFill } from "react-icons/ri";
+
 
 function AddTodo({addThisItem}){
 
-    let [todoItemName,setTodoItemName] = useState();
-    let [todoItemDate,setTodoItemDate] = useState();
+    let [todoItemName,setTodoItemName] = useState("");
+    let [todoItemDate,setTodoItemDate] = useState("");
 
     let handleOnItem = (event)=>{
         setTodoItemName(event.target.value);
@@ -29,7 +31,8 @@ function AddTodo({addThisItem}){
                 <input type="date" className="inputName" value={todoItemDate} onChange={handleOnDate}/>
             </div>
             <div className="col-2">
-                <button type="button" className="btn btn-success mybutton" onClick={handleIt}>Add</button>
+                <button type="button" className="btn btn-success mybutton" onClick={handleIt}><RiAddLargeFill />
+                 </button>
             </div>
         </div>
     </div>

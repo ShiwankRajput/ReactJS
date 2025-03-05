@@ -5,7 +5,7 @@ function TodoItems({todoItems,deleteThisItem}){
     return (
         <div className="item-container">
             {todoItems.map((item) => {
-                return <TodoItem todoName={item.name} todoDate={item.date} deleteThisItem={deleteThisItem}></TodoItem>
+                return <TodoItem key={item} todoName={item.name} todoDate={item.date} deleteThisItem={deleteThisItem}></TodoItem>
 
             })}
             
