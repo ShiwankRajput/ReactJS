@@ -7,22 +7,14 @@ import { useState } from "react";
 
 function App(){
 
-  let initialtodoItems = [
-    {
-      name : "BuyMilk",
-      date : "10/11/2023"
-    },
-    {
-      name : "Go to college",
-      date : "11/10/2023"
-    }
-  ]
-
-
   let [todoItems,setTodoItems] = useState([]);
 
 
   let addThisItem = (todoItemName,todoItemDate)=>{
+
+    //using spread operator...
+
+    /*
 
     let newItem = [
       {
@@ -34,6 +26,24 @@ function App(){
     let newTodoItems = [...todoItems,...newItem]
 
     setTodoItems(newTodoItems);
+
+    */
+
+
+
+    //using functional updates --> (for asynchronous state changes)
+    setTodoItems((currVal)=>{                 //here currVal acts as todoItems in useState hook.
+      
+      let newItem = [
+        {
+          name : todoItemName,
+          date : todoItemDate
+        }
+      ]
+
+       let newTodoItems = [...currVal,...newItem]
+       return newTodoItems;
+    })
 
   }
 
