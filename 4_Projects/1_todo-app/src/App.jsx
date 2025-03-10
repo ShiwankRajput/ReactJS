@@ -68,7 +68,7 @@ function App(){
 
       <AppName></AppName>
       <AddTodo addThisItem={addThisItem}></AddTodo>
-      { todoItems.length === 0 && <WelcomeMessage></WelcomeMessage> }
+      <WelcomeMessage todoItems={todoItems}></WelcomeMessage>
       <TodoItems todoItems={todoItems} deleteThisItem={deleteThisItem}></TodoItems> 
       
     </center>

@@ -1,8 +1,10 @@
 import css from './WelcomeMessage.module.css';
 
-function WelcomeMessage(){
+function WelcomeMessage({todoItems}){
 
-    return <p>Welcome to todo item list</p>
+    return (
+        (todoItems.length ===0) && (<p>Welcome to todo item list</p>)
+    );
 }
 
 export default WelcomeMessage;
