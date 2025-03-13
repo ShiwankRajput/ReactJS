@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      <div className={css.calculator}>
+      <div classNameName={css.calculator}>
         <Display displayValue={calVal}></Display>
         <ButtonContainer buttonClicked={buttonClicked}></ButtonContainer>
       </div>

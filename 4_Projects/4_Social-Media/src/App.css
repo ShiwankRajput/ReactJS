@@ -1,0 +1,11 @@
+.appContainer{
+    display: flex;
+}
+
+.context{
+    width: 100%;
+}
+
+.sidebar{
+    min-height: 735px;
+}

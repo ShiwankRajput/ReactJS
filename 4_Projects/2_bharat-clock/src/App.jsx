@@ -5,17 +5,17 @@ import "./App.css";
 
 function App(){
   return (
-    <center className="clockBox">
+    <center classNameName="clockBox">
 
-      <div className="bharat head">
+      <div classNameName="bharat head">
         <Head></Head>
       </div>
 
-      <div className="bharat title">
+      <div classNameName="bharat title">
         <Title></Title>
       </div>
 
-      <div className="bharat date">
+      <div classNameName="bharat date">
         <Time></Time>
       </div>
 

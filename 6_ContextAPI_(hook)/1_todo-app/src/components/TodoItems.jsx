@@ -10,7 +10,7 @@ function TodoItems(){
     
 
     return (
-        <div className="item-container">
+        <div classNameName="item-container">
             {todoItems.map((item) => {
                 return <TodoItem key={item} todoName={item.name} todoDate={item.date} deleteThisItem={deleteThisItem}></TodoItem> 
 

@@ -24,7 +24,7 @@ function FoodItems({foodmart}){
 
         // {itemset}   (ternary method usage) 
 
-        <ul className="list-group">
+        <ul classNameName="list-group">
             {foodmart.map((item) => {
                 return <Items key={item}  healthy={item} bought={ItemColor.includes(item)} handleBuyButton={(event) => handleBuyButton(event,item)}></Items>  //giving key means, if we want to change any property of a particular item then using key we can change it. This is know as -----> ( key prop )
             })}

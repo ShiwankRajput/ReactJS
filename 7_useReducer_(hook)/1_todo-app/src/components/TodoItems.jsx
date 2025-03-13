@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 function TodoItems({todoItems,deleteThisItem}){
 
     return (
-        <div className="item-container">
+        <div classNameName="item-container">
             {todoItems.map((item) => {
                 return <TodoItem key={item} todoName={item.name} todoDate={item.date} deleteThisItem={deleteThisItem}></TodoItem>
 

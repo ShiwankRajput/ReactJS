@@ -14,9 +14,9 @@ function Items({healthy,bought,handleBuyButton}){
 
         //using of handling events in react
 
-        <li className={`${css["kgItem"]} list-group-item ${bought ? 'active' : 'null'}`}>
+        <li classNameName={`${css["kgItem"]} list-group-item ${bought ? 'active' : 'null'}`}>
             {healthy}
-            <button className={`${css.button} btn btn-secondary`} onClick={handleBuyButton}>Buy</button>    
+            <button classNameName={`${css.button} btn btn-secondary`} onClick={handleBuyButton}>Buy</button>    
         </li>   
     );
 }
@@ -39,7 +39,7 @@ using de-structuring...
 //     let {foodItem} = props;
 
 //     return (
-//         <li className="list-group-item">{foodItem}</li>   
+//         <li classNameName="list-group-item">{foodItem}</li>   
 //     );
 // }
 
@@ -60,7 +60,7 @@ using direct de-structuring...
 // function Items({foodItem}){
 
 //     return (
-//         <li className="list-group-item">{foodItem}</li>   
+//         <li classNameName="list-group-item">{foodItem}</li>   
 //     );
 // }
 

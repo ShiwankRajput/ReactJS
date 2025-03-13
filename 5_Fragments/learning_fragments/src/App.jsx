@@ -75,12 +75,12 @@ Another method of using fragments is :- (there is no need to import React from "
 <>
 
   <h1>Healthy foods</h1>
-  <ul class="list-group">
-    <li class="list-group-item">Roti</li>
-    <li class="list-group-item">Dal</li>
-    <li class="list-group-item">Green Vegetables</li>
-    <li class="list-group-item">Milk</li>
-    <li class="list-group-item">Eggs</li>
+  <ul className="list-group">
+    <li className="list-group-item">Roti</li>
+    <li className="list-group-item">Dal</li>
+    <li className="list-group-item">Green Vegetables</li>
+    <li className="list-group-item">Milk</li>
+    <li className="list-group-item">Eggs</li>
   </ul>
 
 </>

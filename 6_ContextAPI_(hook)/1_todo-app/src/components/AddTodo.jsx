@@ -55,20 +55,20 @@ function AddTodo(){
 
     return (
 
-    <div className="container text-center con">
+    <div classNameName="container text-center con">
 
-        <form className="row myrow" onSubmit={handleIt}>
+        <form classNameName="row myrow" onSubmit={handleIt}>
           
-            <div className="col-4">
-                <input type="text" placeholder="Enter todo here" className="inputName"  ref={addTodoName} required/>
+            <div classNameName="col-4">
+                <input type="text" placeholder="Enter todo here" classNameName="inputName"  ref={addTodoName} required/>
             </div>
 
-            <div className="col-4">
-                <input type="date" className="inputName"  ref={addTodoDate} required/>
+            <div classNameName="col-4">
+                <input type="date" classNameName="inputName"  ref={addTodoDate} required/>
             </div>
  
-            <div className="col-2">
-                <button className="btn btn-success mybutton" ><RiAddLargeFill />
+            <div classNameName="col-2">
+                <button classNameName="btn btn-success mybutton" ><RiAddLargeFill />
                  </button>
             </div>
 

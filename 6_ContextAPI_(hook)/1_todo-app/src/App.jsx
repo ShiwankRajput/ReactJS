@@ -69,7 +69,7 @@ function App(){
       deleteItem : deleteThisItem
       }}>
 
-      <center class="todo-container">
+      <center className="todo-container">
 
         <AppName></AppName>
         <AddTodo></AddTodo>
