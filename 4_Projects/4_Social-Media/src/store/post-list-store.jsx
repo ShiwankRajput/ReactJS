@@ -7,16 +7,48 @@ export let PostList = createContext({
 })
 
 let postReducer = (currPostList,action) => {
-    return currPostList;
+
+    let newPostList = currPostList;
+
+    if(action.type === "ADD_POST"){
+        newPostList = [action.payload,...newPostList];
+    }
+
+    if(action.type === "DELETE_POST"){
+        newPostList = newPostList.filter((post) => {
+            return post.id != action.payload.postId;
+        })
+    }
+
+    return newPostList;
 }
 
 const PostListProvider = ({ children }) => {
 
-    let [postList, dispatchPostList] = useReducer (postReducer, DEFAULT_POST);
+    let [postList, dispatchPostList] = useReducer (postReducer, [] );
   
-    const addPost = () => {};
+    const addPost = (userId,postTitle,postContent,reaction,tags) => {
+        dispatchPostList({
+            type : "ADD_POST",
+            payload : {
+                id : Math.random(),
+                title : postTitle,
+                body : postContent,
+                reaction : reaction,
+                userId : userId,
+                tags : tags
+            }
+        })
+    };
   
-    const deletePost = () => {};
+    const deletePost = (postId) => {
+        dispatchPostList({
+            type : 'DELETE_POST',
+            payload : {
+                postId : postId
+            }
+        })
+    };
 
   
     return (
@@ -26,25 +58,6 @@ const PostListProvider = ({ children }) => {
     );
 
 };
-
-let DEFAULT_POST= [
-    {
-        id:'1',
-        title:'MUMBAI',
-        body:'Hi Friends, I am going to Mumbai on my vacations',
-        reaction:2,
-        userId:'user_1',
-        tags:['vacation','Mumbai','enjoying']
-    },
-    {
-        id:'2',
-        title:'SHIMLA',
-        body:'Hi Friends, I am going to Shimla on my vacations',
-        reaction:12,
-        userId:'user_2',
-        tags:['vacation','Shimla','enjoying']
-    }
-]
 
 
 export default PostListProvider;
