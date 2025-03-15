@@ -4,7 +4,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Sidebars from './components/Sidebars';
 import CreatePost from './components/CreatePost';
-import PostList from './components/PostList';
+import PostLists from './components/PostLists';
+import PostListProvider from './store/post-list-store';
 import { useState } from 'react';
 
 function App() {
@@ -17,15 +18,16 @@ function App() {
   
   return (
     <>
-
-      <div className="appContainer">
-        <Sidebars selectedTab={selectedTab} selectSidebarTab={selectSidebarTab}></Sidebars>
-        <div className="context">
-          <Header></Header>
-          {selectedTab === "Home" ? <PostList></PostList> : <CreatePost></CreatePost>}
-          <Footer></Footer>
+      <PostListProvider>
+        <div className="appContainer">
+          <Sidebars selectedTab={selectedTab} selectSidebarTab={selectSidebarTab}></Sidebars>
+          <div className="context">
+            <Header></Header>
+            {selectedTab === "Home" ? <PostLists></PostLists> : <CreatePost></CreatePost>}
+            <Footer></Footer>
+          </div>
         </div>
-      </div>
+        </PostListProvider>
 
     </>
   );
