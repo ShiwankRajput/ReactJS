@@ -2,34 +2,33 @@ import { useContext, useEffect, useState } from "react";
 import Post from "./Post";
 import { PostList } from "../store/post-list-store";
 import WelcomeMessage from "./WelcomeMessage";
-import LoadingSpinner from "./LoadingSpinner";
+import { useLoaderData } from "react-router-dom";
 
-function PostLists({fetching}){
+function PostLists(){
 
-   let {postList} = useContext(PostList);
-
-
-   //fetch  api here is handle using button -->
-
-   let handleGetPostClick = ()=>{
-    // fetch('https://dummyjson.com/posts')
-    //     .then(res => res.json())
-    //     .then(obj => addServerPost(obj.posts));
-   }
+    let postList = useLoaderData();
 
     return(
         <>
 
-            {fetching && <LoadingSpinner></LoadingSpinner>}
-
-            {!fetching && postList.length == 0 && <WelcomeMessage onGetPostsClick={handleGetPostClick}></WelcomeMessage>}
+            {postList.length == 0 && <WelcomeMessage onGetPostsClick={handleGetPostClick}></WelcomeMessage>}
         
-            {!fetching && postList.map((post)=> {
+            {postList.map((post)=> {
                 return <Post key={post.id} post={post} />
             })}
         
         </>
     );
+}
+
+export const PostLoader = () => {
+
+    return fetch('https://dummyjson.com/posts')
+        .then(res => res.json())
+        .then(obj => {
+           return obj.posts;
+        });
+
 }
 
 export default PostLists;

@@ -3,7 +3,6 @@ import { createContext, useReducer, useState, useEffect } from "react";
 
 export let PostList = createContext({
     postList : [],
-    fetching : false,
     addPost : () => {},
     deletePost : () => {}
 })
@@ -32,8 +31,6 @@ let postReducer = (currPostList,action) => {
 const PostListProvider = ({ children }) => {
 
     let [postList, dispatchPostList] = useReducer (postReducer, []);
-
-    let [fetching, setFetching] = useState(false);
     
   
     const addPost = (post) => {
@@ -62,57 +59,9 @@ const PostListProvider = ({ children }) => {
 
     }, [dispatchPostList] );
 
-
-    //using useEffect hook cleanup when user moves to another component
-        useEffect(()=>{
-    
-            const controller = new AbortController;
-            const signal = controller.signal;
-    
-            setFetching(true);
-            fetch('https://dummyjson.com/posts',{signal})
-            .then(res => res.json())
-            .then(obj => {
-                addServerPost(obj.posts)
-                setFetching(false);
-            });
-    
-    
-            return ()=>{
-                controller.abort();
-            }
-    
-        },[]);
-    
-    
-       //using useEffect  ---->
-        /*useEffect(()=>{
-    
-            setFetching(true);
-            fetch('https://dummyjson.com/posts')
-            .then(res => res.json())
-            .then(obj => {
-                addServerPost(obj.posts)
-                setFetching(false);
-            });
-    
-        }, []);*/
-    
-    
-       // this is done using state changed managemenet
-       /*let [dataFetched, setDataFetched] = useState(false);
-    
-       if(!dataFetched){
-            fetch('https://dummyjson.com/posts')
-            .then(res => res.json())
-            .then(obj => addServerPost(obj.posts));
-    
-            setDataFetched(true);
-        }*/
-
   
     return (
-      <PostList.Provider value={{ postList, fetching, addPost, deletePost }}>
+      <PostList.Provider value={{ postList, addPost, deletePost }}>
         {children}
       </PostList.Provider>
     );
