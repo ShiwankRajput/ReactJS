@@ -51,7 +51,7 @@ function Controls(){
             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <button type="button" className="btn btn-primary" onClick={handleIncrement}>INCREMENT</button>
                 <button type="button" className="btn btn-success" onClick={handleDecrement}>DECREMENT</button>
-                <button type="button" class="btn btn-danger" onClick={handlePrivacy}>Privacy Toggle</button>
+                <button type="button" className="btn btn-danger" onClick={handlePrivacy}>Privacy Toggle</button>
             </div>
 
             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center controlRow">
